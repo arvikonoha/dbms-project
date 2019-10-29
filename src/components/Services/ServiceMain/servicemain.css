@@ -1,0 +1,146 @@
+.options-btn {
+  position: fixed;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #202027b9;
+  top: 80px;
+  left: 10%;
+  transition: .2s left ease-in-out;
+}
+
+.options-btn.hide {
+  left: -10%;
+  transition: .2s left ease-in-out;
+}
+
+.options-btn:hover {
+  color: #202027;
+}
+
+#services {
+  position: relative;
+  height: 600px;
+  margin-top: 56px;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow-y: auto;
+}
+
+@media (max-width:900px) {
+  #services {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
+#services p:first-child {
+  font-size: 14px;
+}
+
+#services .service-cards {
+  padding: 20px;
+}
+
+
+#services .service-cards .service-card {
+  background-color: #cecece;
+  color: #202027;
+  padding: 28px 20px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+#services .service-cards .service-card h2 {
+  margin-bottom: 4px;
+  font-size: 24px;
+  color: #202027;
+  display: inline-block;
+}
+
+#services .service-cards .service-card .category {
+  display: inline-block;
+}
+
+#services .service-cards .service-card .category::before {
+  content: '';
+  width: 1px;
+  height: 12px;
+  background-color: #202027;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+#services .service-cards .service-card .location {
+  display: inline-block;
+  font-size: 12px;
+}
+
+#services .service-cards .service-card .location::before {
+  content: '';
+  width: 1px;
+  height: 8px;
+  background-color: #202027;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+#services .service-cards .service-card .price-section {
+  font-size: 40px;
+  margin-top: 16px;
+}
+
+#services .service-cards .service-card .visit-profile-btn {
+  align-self: flex-end;
+  font-size: 14px;
+  font-family: 'Lexend Deca', sans-serif;
+  background-color: transparent;
+  color: #63915d;
+  border: 2px solid #63915d;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+#services .service-cards .service-card .visit-profile-btn:hover {
+  color: #fff;
+  background-color: #63915d;
+  transition: all ease-in-out .2s;
+}
+
+
+
+@media (max-width:900px) {
+  #services .service-cards .service-card h2 {
+    font-size: 18px;
+  }
+
+  #services .service-cards .service-card .category {
+    display: block;
+    font-size: 14px;
+  }
+
+  #services .service-cards .service-card .location {
+    display: none;
+  }
+
+  #services .service-cards .service-card .location::before,
+  #services .service-cards .service-card .category::before {
+    display: none;
+  }
+
+  #services .service-cards .service-card .price-section {
+    margin-top: 8px;
+    font-size: 30px;
+  }
+
+  #services .service-cards .service-card .visit-profile-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}

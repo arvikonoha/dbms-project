@@ -1,13 +1,128 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.disp-ib {
+  display: inline-block;
+}
+
+.disp-bl {
+  display: block;
+}
+
+.f-size-1 {
+  font-size: 1rem;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-fix {
+  position: fixed;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pd-30 {
+  padding: 30px;
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.pd-15 {
+  padding: 15px;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.pd-8y {
+  padding: 8px 0;
+}
+
+.pd-16x {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.pd-16y.pd-8x {
+  padding: 16px 8px;
+}
+
+.mr-24b {
+  margin-bottom: 24px;
+}
+
+.mr-16b {
+  margin-bottom: 16px;
+}
+
+.mr-8b {
+  margin-bottom: 8px;
+}
+
+.fl-b {
+  display: flex;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ali-c {
+  align-items: center;
+}
+
+.currency {
+  font-size: 24px;
+}
+
+a {
+  color: #202027;
+  text-decoration: none;
+}
+
+.update-btns {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.update-btns .edit-btn,
+.update-btns .drop-down-btn {
+  margin-right: 10px;
+}
+
+.bg-lw {
+  background-color: #ffffff88;
+}
+
+.cu-po {
+  cursor: pointer;
+}
+
+.ht-100v {
+  height: 100vh;
 }

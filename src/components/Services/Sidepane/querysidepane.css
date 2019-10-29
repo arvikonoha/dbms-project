@@ -1,0 +1,103 @@
+#sort-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 3;
+  background-color: #202027;
+  width: 300px;
+  padding: 20px 40px;
+  color: #fff;
+  transition: .2s ease-in-out left;
+}
+
+#sort-filter.hide {
+  left: -300px;
+  transition: .2s ease-in-out left;
+}
+
+#sort-filter h2 {
+  padding-bottom: 24px;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 1.6em;
+  border-bottom: 1px #cecece28 solid;
+}
+
+#sort-filter h3 {
+  font-weight: normal;
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.close-srt-btn {
+  cursor: pointer;
+  background-color: transparent;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #ffffff5b;
+  position: absolute;
+  top: 112px;
+  right: 40px;
+  border: none;
+  font-size: 20px;
+  transition: all ease-in-out .2s;
+}
+
+.close-srt-btn:hover {
+  color: #ffffffc5;
+  transition: all ease-in-out .2s;
+}
+
+#sort-filter ul {
+  padding-bottom: 24px;
+}
+
+#sort-filter label {
+  font-size: 14px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+#sort-filter input {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #434352;
+  color: #fff;
+  font-family: 'Lexend Deca', sans-serif;
+  border: none;
+  margin-bottom: 16px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all ease-in-out .2s;
+}
+
+#sort-filter input:focus,
+#sort-filter input[type="submit"]:hover {
+  background-color: #cecece;
+  color: #202027;
+  transition: all ease-in-out .2s;
+}
+
+#sort-filter li {
+  list-style: none;
+  padding: 8px 0;
+  border-bottom: 1px #cecece28 solid;
+}
+
+.price-filter {
+  cursor: pointer;
+  background-color: transparent;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #ffffff5b;
+  border: none;
+  font-size: 18px;
+  margin: 8px 0;
+  transition: all ease-in-out .2s;
+}
+
+.price-filter:hover,
+.price-filter.set {
+  color: #ffffffc5;
+  transition: all ease-in-out .2s;
+}

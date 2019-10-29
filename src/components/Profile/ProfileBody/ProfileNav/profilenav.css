@@ -1,0 +1,29 @@
+#profile-main .profile-body nav.profile-body-nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff88;
+  border-radius: 5px;
+}
+
+#profile-main .profile-body nav.profile-body-nav li {
+  list-style: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+#profile-main .profile-body nav.profile-body-nav li a {
+  position: relative;
+  font-size: 20px;
+  color: #20202767;
+  padding-right: 15px;
+  transition: .2s all ease-in-out;
+}
+
+#profile-main .profile-body nav.profile-body-nav li a.current,
+#profile-main .profile-body nav.profile-body-nav li a:hover {
+  color: #202027d0;
+  transition: .2s all ease-in-out;
+}

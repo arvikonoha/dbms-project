@@ -1,0 +1,74 @@
+section#category {
+  margin-top: 30px;
+  position: relative;
+  max-height: 450px;
+}
+
+section#category .error-line {
+  text-align: center;
+  padding: 20px;
+  background-color: #cecece;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+#category h2 {
+  font-size: 40px;
+  margin-bottom: 32px;
+  line-height: 2rem;
+}
+
+#category #category-header {
+  margin-bottom: 24px;
+  padding: 10px 70px;
+}
+
+.categories-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  margin-bottom: 30px;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 350px;
+  border-radius: 10px;
+  color: #202027;
+  flex-basis: 280px;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  background-color: #cecece;
+}
+
+.category-card p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.category-card:last-child {
+  height: 30px;
+  background-color: transparent;
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.category-card h3 {
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+.category-card img.category-img {
+  width: 50%;
+}
+
+.category-card .category-btn {
+  font-size: 14px;
+  padding: 8px 16px;
+}

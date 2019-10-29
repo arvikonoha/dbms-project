@@ -1,0 +1,10 @@
+.error-modal {
+  position: fixed;
+  padding: 30px;
+  top: 100px;
+  z-index: 5;
+  background-color: #202027;
+  color: #fff;
+  left: 0;
+  transition: .4s left ease-in-out;
+}

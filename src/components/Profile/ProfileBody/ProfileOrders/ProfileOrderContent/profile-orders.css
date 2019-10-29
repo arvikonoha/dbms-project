@@ -1,0 +1,65 @@
+.vendor-orders {
+  color: #202027;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-box {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #ffffff88;
+  border-radius: 10px;
+}
+
+.order-box:last-child {
+  margin-bottom: 0;
+}
+
+.order-box h2,
+.order-box h3 {
+  font-weight: 800;
+}
+
+.order-box h2 {
+  margin-bottom: 16px;
+}
+
+.order-box div.hide {
+  display: none;
+}
+
+.order-box div {
+  margin: 14px 0;
+}
+
+.order-box .date-info {
+  background-color: #ffffff88;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-box .order-services {
+  background-color: #ffffff88;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-box .order-services ul {
+  padding: 8px;
+}
+
+.order-box .order-services li {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.order-box .order-services li:last-child {
+  padding: 0;
+}
+
+.order-box .customer-contact {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff88;
+}

@@ -1,0 +1,27 @@
+#main-header #main-nav .sidepane.hide {
+  right: -250px;
+  opacity: 0;
+  transition: .5s ease-in-out all;
+}
+
+#main-header #main-nav .sidepane {
+  z-index: 3;
+  opacity: 1;
+  width: 250px;
+  background-color: #202027;
+  color: #fff;
+  right: 0;
+  top: 0;
+  box-shadow: 0 4px 4px .5px rgba(0, 0, 0, .7);
+  transition: .5s ease-in-out all;
+}
+
+#main-header #main-nav .sidepane ul li a {
+  color: #ffffff93;
+  transition: .2s all ease-in-out;
+}
+
+#main-header #main-nav .sidepane ul li a:hover {
+  color: #fff;
+  transition: .2s all ease-in-out;
+}

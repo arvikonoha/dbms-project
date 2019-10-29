@@ -1,0 +1,35 @@
+#profile-main .profile-body {
+  position: relative;
+  grid-column: 3/6;
+  grid-row: 1/4;
+  overflow: auto;
+  padding: 20px 30px 30px 30px;
+  border-radius: 5px;
+  color: #202027;
+  background: linear-gradient(#ffc003, #ffc003);
+  animation-name: init3;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes init3 {
+  0% {
+    top: -50px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@media (max-width:900px) {
+
+  #profile-main .profile-body {
+    grid-column: 1/6;
+    grid-row: 3/6;
+  }
+
+}

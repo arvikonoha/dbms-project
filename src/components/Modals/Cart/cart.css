@@ -1,0 +1,129 @@
+.cart-button {
+  position: fixed;
+  max-width: 200px;
+  max-height: 200px;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+}
+
+.cart-button .cart-icon.selected {
+  background-color: #ad3d4c;
+  transition: .2s ease-in-out all;
+}
+
+.cart-button .cart-icon {
+  border: none;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #202027;
+  color: #fff;
+  font-family: 'Lexend Deca', sans-serif;
+  transition: .2s ease-in-out all;
+}
+
+.cart-button .cart-icon i {
+  margin-bottom: 5px;
+}
+
+
+.cart-content {
+  position: absolute;
+  z-index: -1;
+  left: -310px;
+  bottom: 0%;
+  background-color: #202027;
+  color: #fff;
+  width: 300px;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: .3s ease-in-out all;
+}
+
+.cart-content.hide {
+  bottom: -30%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out .3s;
+}
+
+
+
+.cart-content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: #cecece28 solid 1px;
+  padding: 3px 0;
+}
+
+.cart-content h2 {
+  display: inline-block;
+  position: relative;
+  font-size: 24px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.cart-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  width: 90px;
+  padding: 1px;
+  left: 0;
+  background-color: #fff;
+}
+
+.cart-content ul li .service {
+  display: inline-block;
+}
+
+.cart-content ul li .service.total {
+  font-size: 20px;
+}
+
+.cart-content ul li button {
+  width: 100%;
+  background-color: #3dad68;
+  font-size: 16px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.cart-content ul li .price {
+  display: inline-block;
+  min-width: 105px;
+  background-color: #ffc003;
+  color: #202027;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.cart-content ul li .price i {
+  margin-left: 5px;
+}
+
+@media (max-width:500px) {
+  .cart-content {
+    transform: scale(.8);
+    left: -270px;
+  }
+
+  .cart-button {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .cart-button .cart-icon {
+    transform: scale(.8);
+  }
+}

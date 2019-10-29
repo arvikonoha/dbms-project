@@ -1,0 +1,74 @@
+#profile-main .profile-services li {
+  position: relative;
+  list-style: none;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #ffffff88;
+}
+
+#profile-main .profile-services .update-btns {
+  top: 5px;
+  right: 10px;
+  transform: scale(.8);
+}
+
+#profile-main .profile-services li .service-title {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+#profile-main .profile-services li .service-price {
+  font-size: 32px;
+}
+
+#profile-main .profile-services li .profile-btn {
+  border: none;
+  display: block;
+  background-color: #3dad68;
+  color: white;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 16px;
+  transition: .2s all ease-in-out;
+  align-self: flex-end;
+}
+
+#profile-main .profile-services li .profile-btn:hover {
+  background-color: #3dad68;
+  transition: .2s all ease-in-out;
+}
+
+#profile-main .profile-services li .profile-btn:active {
+  transform: scale(.9);
+  transition: .2s all ease-in-out;
+}
+
+@media (max-width:900px) {
+  #profile-main .profile-body nav.profile-body-nav li a {
+    font-size: 14px;
+    padding: 8px 4px;
+    line-height: 2em;
+  }
+
+  #profile-main .profile-body nav.profile-body-nav .update-btns {
+    transform: scale(.6);
+    top: 8px;
+    right: 5px;
+  }
+
+  #profile-main .profile-services li .profile-btn {
+    font-size: 12px;
+  }
+
+  #profile-main .profile-services li {
+    font-size: 12px;
+  }
+
+  #profile-main .profile-services li .service-price {
+    font-size: 24px;
+  }
+
+  .currency {
+    font-size: 18px;
+  }
+}

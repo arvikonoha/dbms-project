@@ -1,0 +1,86 @@
+.form-outer .form-container {
+  position: relative;
+  background-color: #fff;
+  padding-top: 5px;
+  width: 350px;
+  font-size: 16px;
+  line-height: 1.6em;
+  overflow-y: auto;
+  transition: .5s ease-in-out height;
+}
+
+.form-outer .form-container input[type="checkbox"] {
+  display: inline-block;
+  width: 30px;
+  height: 0px;
+}
+
+.form-outer .form-container textarea {
+  height: 80px;
+}
+
+.form-outer .form-container button {
+  border: none;
+  margin: 8px 0;
+  padding: 10px 20px;
+  color: #202027;
+  background-color: #cecece;
+  font-family: 'Lexend Deca', sans-serif;
+  transition: .5s all ease-in-out;
+  display: block;
+}
+
+.form-outer .form-container button:hover {
+  background-color: #202027;
+  color: #cecece;
+  transition: .5s all ease-in-out;
+}
+
+.form-outer .form-container input:focus,
+.form-outer .form-container textarea:focus {
+  background-color: #202027;
+  color: #cecece;
+  transition: .5s all ease-in-out;
+}
+
+.form-outer .form-container label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.form-outer .form-container h2 {
+  margin: 12px 0;
+  padding: 16px 0;
+  font-size: 24px;
+  line-height: 1.6em;
+  border-bottom: #202027 3px solid;
+}
+
+.form-outer .form-container p:not('.f-size-1-5') {
+  font-size: 12px;
+}
+
+.form-outer .form-container .service-container {
+  display: flex;
+}
+
+.form-outer .form-container .service-container .service-box:nth-child(1) {
+  margin-right: 5px;
+}
+
+.delete-content {
+  padding: 4px 16px;
+  border-radius: 10px;
+  border: 2px solid #b42525;
+  display: inline-block;
+  margin: 16px 0;
+  margin-right: 12px;
+  transition: .5s ease-in-out all;
+  cursor: pointer;
+}
+
+.delete-content:hover {
+  background-color: #b42525;
+  color: #fff;
+  transition: .5s ease-in-out all;
+}

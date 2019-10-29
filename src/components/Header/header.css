@@ -1,0 +1,11 @@
+#main-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+
+#main-header #main-logo {
+  font-size: 35px;
+  float: left;
+}

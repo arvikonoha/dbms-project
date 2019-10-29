@@ -1,0 +1,74 @@
+#profile-main .profile-header {
+  position: relative;
+  grid-column: 1/3;
+  grid-row: 1/3;
+  color: #23313a;
+
+  animation-name: init;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+#profile-main .profile-header h2 {
+  position: relative;
+  font-size: 50px;
+  padding-bottom: 40px;
+  display: inline-block;
+}
+
+#profile-main .profile-header h2::after {
+  position: absolute;
+  content: '';
+  width: 160px;
+  height: 3px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #23313a;
+}
+
+@keyframes init {
+  0% {
+    opacity: 0;
+    bottom: -50px
+  }
+
+
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+
+#profile-main .profile-header p:nth-child(3) {
+  font-size: 24px;
+  color: #23313ade;
+}
+
+#profile-main .profile-header p:nth-child(4) {
+  color: #23313a98;
+  margin-bottom: 24px;
+}
+
+@media (max-width:900px) {
+  #profile-main .profile-header {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  #profile-main .profile-header h2 {
+    line-height: 1em;
+    padding-bottom: 16px;
+    margin-right: 20px;
+  }
+
+  #profile-main .profile-header p {
+    display: inline-block;
+    padding-right: 8px;
+  }
+
+  #profile-main .profile-header p:nth-child(4) {
+    font-size: 16px;
+  }
+
+}
