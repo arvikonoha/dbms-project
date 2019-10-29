@@ -30,8 +30,8 @@ const user = {
       }
     }
     try {
-      let result = await axios.delete(`https://frozen-brushlands-21504.herokuapp.com/deleteaccount/${payload}`, config)
-      console.log(result)
+      let result = await axios.delete(`/deleteaccount/${payload}`, config)
+
       action.setAuth(false);
       action.setUserDetails({
         f_name: "",
@@ -47,10 +47,10 @@ const user = {
         orders: []
       });
       localStorage.removeItem("userToken");
-
+      window.location.href = "/"
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -78,7 +78,7 @@ const user = {
       }
     }
     try {
-      let result = await axios.post(' https://frozen-brushlands-21504.herokuapp.com/insertorder', {
+      let result = await axios.post(' /insertorder', {
         address,
         title,
         phone,
@@ -90,7 +90,7 @@ const user = {
       action.deleteCart()
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response, err)
+
       if (err.response)
         action.setError(err.response.data)
       setTimeout(() => {
@@ -105,14 +105,14 @@ const user = {
           "x-auth-token": localStorage.getItem("userToken")
         }
       }
-      let result = await axios.get(' https://frozen-brushlands-21504.herokuapp.com/getuser', config)
-      console.log(result.data)
+      let result = await axios.get(' /getuser', config)
+
       action.setUserDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)
 
     } catch (err) {
-      console.log(err.response)
+
       localStorage.removeItem("userToken")
       action.setError(err.response.data)
       setTimeout(() => {
@@ -129,19 +129,19 @@ const user = {
     let body = {}
     let isVendor;
     for (let i of form.entries())
-      if (i[0] != "vendor-check")
+      if (i[0] !== "vendor-check")
         body[i[0]] = i[1]
     else
       isVendor = i[1] === "on"
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/login/${isVendor}`, body)
-      console.log(result.data)
+      let result = await axios.post(`/login/${isVendor}`, body)
+
       action.setUserDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)
       localStorage.setItem("userToken", result.data.token)
     } catch (err) {
-      console.log(err.response, err)
+
       if (err.response)
         action.setError(err.response.data)
       setTimeout(() => {
@@ -155,14 +155,14 @@ const user = {
     for (let i of form.entries())
       body[i[0]] = i[1]
     try {
-      let result = await axios.post(' https://frozen-brushlands-21504.herokuapp.com/register/user', body)
-      console.log(result.data)
+      let result = await axios.post(' /register/user', body)
+
       action.setUserDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)
       localStorage.setItem("userToken", result.data.token)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})

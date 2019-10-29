@@ -25,6 +25,7 @@ function ProfileHandler({
     return () => {
       setLoading(true);
     };
+    // eslint-disable-next-line
   }, []);
   if (isLoading && !isAuth) return <LoadingModal />;
   else if ((!isEmpty(vendorErrors) || vendorErrors.length > 0) && !isAuth) {

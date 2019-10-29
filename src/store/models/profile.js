@@ -43,8 +43,8 @@ const profile = {
     let {
       service_id
     } = payload
-    let ind = state["services"].findIndex(element => element.service_id == service_id);
-    if (ind != -1)
+    let ind = state["services"].findIndex(element => element.service_id === service_id);
+    if (ind !== -1)
       state["services"][ind] = payload
     else
       state["services"].push(payload)
@@ -57,8 +57,8 @@ const profile = {
       }
     }
     try {
-      let result = await axios.delete(`https://frozen-brushlands-21504.herokuapp.com/deleteaccount/${payload}`, config)
-      console.log(result)
+      let result = await axios.delete(`/deleteaccount/${payload}`, config)
+
       action.setAuth(false);
       action.setProfileDetails({
         category: "Unknown",
@@ -72,10 +72,10 @@ const profile = {
         services: [],
         description: "No description provided"
       });
+      window.location.href = "/"
       localStorage.removeItem("vendorToken");
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err, err.response.data)
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -89,7 +89,7 @@ const profile = {
     let form = new FormData(document.forms[0])
     let body = {}
     for (let i of form.entries())
-      if (i[0] != "vendor-check")
+      if (i[0] !== "vendor-check")
         body[i[0]] = i[1]
     let config = {
       headers: {
@@ -97,11 +97,10 @@ const profile = {
       }
     }
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/updatebasic`, body, config)
+      let result = await axios.post(`/updatebasic`, body, config)
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -114,7 +113,7 @@ const profile = {
     let form = new FormData(document.forms[0])
     let body = {}
     for (let i of form.entries())
-      if (i[0] != "vendor-check")
+      if (i[0] !== "vendor-check")
         body[i[0]] = i[1]
     let config = {
       headers: {
@@ -122,12 +121,12 @@ const profile = {
       }
     }
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/updatecontact`, body, config)
-      console.log(result.data)
+      let result = await axios.post(`/updatecontact`, body, config)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -136,19 +135,19 @@ const profile = {
 
   }),
   deleteContact: thunk(async (action) => {
-    console.log('delete contact')
+
     let config = {
       headers: {
         "x-auth-token": localStorage.getItem("vendorToken")
       }
     }
     try {
-      let result = await axios.delete(`https://frozen-brushlands-21504.herokuapp.com/deletecontact`, config)
-      console.log(result.data)
+      let result = await axios.delete(`/deletecontact`, config)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -159,19 +158,19 @@ const profile = {
     state["services"] = state["services"].filter(item => item.service_id !== state.currentServiceId)
   }),
   permaDeleteService: thunk(async (action, currentServiceId) => {
-    console.log('Delete service', currentServiceId)
+
     let config = {
       headers: {
         "x-auth-token": localStorage.getItem("vendorToken")
       }
     }
     try {
-      let result = await axios.delete(`https://frozen-brushlands-21504.herokuapp.com/deleteservice/${currentServiceId}`, config)
-      console.log(result.data)
+      let result = await axios.delete(`/deleteservice/${currentServiceId}`, config)
+
       action.deleteService()
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -179,19 +178,19 @@ const profile = {
     }
   }),
   deleteDescription: thunk(async (action) => {
-    console.log('delete description')
+
     let config = {
       headers: {
         "x-auth-token": localStorage.getItem("vendorToken")
       }
     }
     try {
-      let result = await axios.delete(`https://frozen-brushlands-21504.herokuapp.com/deletedescription`, config)
-      console.log(result.data)
+      let result = await axios.delete(`/deletedescription`, config)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -199,24 +198,24 @@ const profile = {
     }
   }),
   updateDescription: thunk(async (action) => {
-    console.log('Update contact')
+
     let form = new FormData(document.forms[0])
     let body = {}
     for (let i of form.entries())
       body[i[0]] = i[1]
-    console.log(body)
+
     let config = {
       headers: {
         "x-auth-token": localStorage.getItem("vendorToken")
       }
     }
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/updatedescription`, body, config)
-      console.log(result.data)
+      let result = await axios.post(`/updatedescription`, body, config)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -226,24 +225,24 @@ const profile = {
   updateService: thunk(async (action,
     currentServiceId
   ) => {
-    console.log('Update service', currentServiceId)
+
     let form = new FormData(document.forms[0])
     let body = {}
     for (let i of form.entries())
       body[i[0]] = i[1]
-    console.log(body)
+
     let config = {
       headers: {
         "x-auth-token": localStorage.getItem("vendorToken")
       }
     }
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/updateservice/${currentServiceId}`, body, config)
-      console.log(result.data)
+      let result = await axios.post(`/updateservice/${currentServiceId}`, body, config)
+
       action.setService(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -251,11 +250,11 @@ const profile = {
     }
   }),
   insertService: thunk(async (action) => {
-    console.log('insert service')
+
     let form = new FormData(document.forms[0])
     let body = {}
     for (let i of form.entries())
-      if (i[0] != "vendor-check")
+      if (i[0] !== "vendor-check")
         body[i[0]] = i[1]
     let config = {
       headers: {
@@ -263,12 +262,12 @@ const profile = {
       }
     }
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/insertservice`, body, config)
-      console.log(result.data)
+      let result = await axios.post(`/insertservice`, body, config)
+
       action.setService(result.data)
       action.setUpdateSuccess(true)
     } catch (err) {
-      console.log(err)
+
 
       // action.setError(err.response.data)
       setTimeout(() => {
@@ -283,11 +282,11 @@ const profile = {
   }),
   loadProfile: thunk(async (action, vid) => {
     try {
-      let result = await axios.get(`https://frozen-brushlands-21504.herokuapp.com/profile/${vid}`)
+      let result = await axios.get(`/profile/${vid}`)
       action.setProfileDetails(result.data)
       action.setLoading(false)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       action.setLoading(false)
       setTimeout(() => {
@@ -299,18 +298,18 @@ const profile = {
     let form = new FormData(document.forms[0])
     let body = {}
     for (let i of form.entries())
-      if (i[0] != "vendor-check")
+      if (i[0] !== "vendor-check")
         body[i[0]] = i[1]
     try {
-      let result = await axios.post(' https://frozen-brushlands-21504.herokuapp.com/register/vendor', body)
-      console.log(result.data)
+      let result = await axios.post(' /register/vendor', body)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)
       action.setLoading(false)
       localStorage.setItem("vendorToken", result.data.token)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -322,20 +321,20 @@ const profile = {
     let body = {}
     let isVendor;
     for (let i of form.entries())
-      if (i[0] != "vendor-check")
+      if (i[0] !== "vendor-check")
         body[i[0]] = i[1]
     else
       isVendor = i[1] === "on"
     try {
-      let result = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/login/${isVendor}`, body)
-      console.log(result.data)
+      let result = await axios.post(`/login/${isVendor}`, body)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)
       action.setLoading(false)
       localStorage.setItem("vendorToken", result.data.token)
     } catch (err) {
-      console.log(err.response)
+
       action.setError(err.response.data)
       setTimeout(() => {
         action.setError({})
@@ -349,14 +348,14 @@ const profile = {
           "x-auth-token": localStorage.getItem("vendorToken")
         }
       }
-      let result = await axios.get(' https://frozen-brushlands-21504.herokuapp.com/getvendor', config)
-      console.log(result.data)
+      let result = await axios.get(' /getvendor', config)
+
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)
       action.setLoading(false)
     } catch (err) {
-      console.log(err.response, err)
+
       localStorage.removeItem("userToken")
       action.setError(err.response.data)
       setTimeout(() => {
@@ -376,7 +375,7 @@ const profile = {
     vid,
     currentServiceId
   }) => {
-    console.log(currentServiceId)
+
     switch (currentForm) {
       case 'update-basic':
         action.updateBasic(vid);
@@ -401,8 +400,12 @@ const profile = {
         break;
       case 'delete-description':
         action.deleteDescription();
+        break;
       case 'delete-account':
         action.deleteAccount(true);
+        break;
+      default:
+        console.log("default case")
     }
   })
 }

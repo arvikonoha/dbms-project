@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useStoreState } from "easy-peasy";
 import CheckBox from "../FormActions/CheckBox/CheckBox";
 import Field from "../Field/Field";
@@ -26,7 +26,7 @@ function FormContainer() {
             <p className="f-size-1 delete-content">{item}</p>
           ))
         : null}
-      {requiresCheckbox.some(item => item == form.currentForm) ? (
+      {requiresCheckbox.some(item => item === form.currentForm) ? (
         <>
           <CheckBox />
           <LoginSwitch />

@@ -9,7 +9,7 @@ function ProfileNav({ toggleContent }) {
   let isAuth = useStoreState(state => state.profile.isAuth);
   function resolveClass(i) {
     return function contentClass() {
-      return i == currentContent ? "current" : "";
+      return i === currentContent ? "current" : "";
     };
   }
   return (
@@ -17,8 +17,7 @@ function ProfileNav({ toggleContent }) {
       <ProfileModifier formDetails={InsertService} isInsert={true} />
       <ul>
         <li>
-          <a
-            href=""
+          <button
             className={resolveClass("services")()}
             onClick={e => {
               e.preventDefault();
@@ -27,10 +26,10 @@ function ProfileNav({ toggleContent }) {
             }}
           >
             Services
-          </a>
+          </button>
         </li>
         <li>
-          <a
+          <button
             href=""
             className={resolveClass("description")()}
             onClick={e => {
@@ -40,11 +39,11 @@ function ProfileNav({ toggleContent }) {
             }}
           >
             Description
-          </a>
+          </button>
         </li>
         {isAuth ? (
           <li>
-            <a
+            <button
               href=""
               className={resolveClass("orders")()}
               onClick={e => {
@@ -54,7 +53,7 @@ function ProfileNav({ toggleContent }) {
               }}
             >
               Orders
-            </a>
+            </button>
           </li>
         ) : null}
       </ul>

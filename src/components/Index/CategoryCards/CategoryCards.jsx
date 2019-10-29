@@ -16,7 +16,7 @@ function CategeoryCards() {
   let setVendorLoading = useStoreActions(state => state.query.setVendorLoading);
   useEffect(() => {
     if (isLoading) setAsyncCategories();
-  }, []);
+  }, [isLoading, setAsyncCategories]);
   if (isLoading)
     return (
       <section id="category">
@@ -56,8 +56,7 @@ function CategeoryCards() {
     return (
       <section id="category">
         <p className="error-line">
-          Sorry for the error.Could'nt load the categories.Please try again
-          later
+          Sorry for inconvenience. There are no vendors registered.
         </p>
       </section>
     );

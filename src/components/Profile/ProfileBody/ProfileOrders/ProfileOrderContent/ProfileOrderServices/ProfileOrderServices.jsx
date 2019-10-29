@@ -4,8 +4,9 @@ function ProfileOrderServices({ services, ishide }) {
   function resolveclass() {
     return ishide ? "order-services hide" : "order-services";
   }
+  console.log(services.map(item => item.service_text));
   return (
-    <div class="order-services hide">
+    <div class={resolveclass()}>
       <h3>Services requested</h3>
       <ul>
         {services.map(item => (

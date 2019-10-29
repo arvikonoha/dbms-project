@@ -9,11 +9,9 @@ const form = {
   isAuth: false,
   setLogin: action((state, isLogin) => {
     state.isLogin = isLogin
-    console.log(state.isLogin, isLogin)
   }),
   setVendor: action((state, isVendor) => {
     state.isVendor = isVendor
-    console.log(state.isVendor, isVendor)
   }),
   setVisible: action((state, isVisible) => {
     state.isVisible = isVisible
@@ -58,7 +56,6 @@ const form = {
       formTitle,
       formFields
     } = formDetails;
-    console.log(currentForm, formTitle, formFields);
     for (let key in formDetails) state[key] = formDetails[key];
   }),
   submitUser: thunk(async (action) => {
@@ -67,19 +64,12 @@ const form = {
     for (let i of form.entries())
       body[i[0]] = i[1]
     try {
-      let result = await axios.post(' https://frozen-brushlands-21504.herokuapp.com/register/user', body)
-      console.log(result.data)
+      let result = await axios.post('/register/user', body)
+
       action.setVisible(false)
     } catch (err) {
-      console.log(err.response)
-    }
 
-  }),
-  submitVendor: thunk(async (action) => {
-    console.log('Submit vendor')
-  }),
-  loginForm: thunk(async (action) => {
-    // console.log('Login')
+    }
 
   }),
   submitForm: thunk(async (action, formType) => {

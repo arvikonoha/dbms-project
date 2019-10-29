@@ -33,8 +33,8 @@ function ServiceMain() {
         setVendorQuerySuccess(false);
         setVendorLoading(true);
       }
-    }, 4000);
-  }, []);
+    }, 2000);
+  }, [querySuccess, setAsyncVendors, setVendorLoading, setVendorQuerySuccess]);
 
   if (isVendorLoading)
     return (

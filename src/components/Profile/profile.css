@@ -11,7 +11,24 @@
 @media (max-width:900px) {
 
   #profile-main {
-    max-height: 1024px;
+    max-height: 1100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-template-rows: repeat(9, 1fr);
   }
 
+
+}
+
+.info-modal {
+  background-color: #202027;
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  margin: 5px;
+  z-index: 2;
+  width: 99%;
+  left: 0;
 }

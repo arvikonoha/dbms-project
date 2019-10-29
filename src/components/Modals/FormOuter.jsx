@@ -42,7 +42,7 @@ function FormOuter() {
             action="POST"
             onSubmit={e => {
               e.preventDefault();
-              if (rlForm.some(item => item == currentForm)) {
+              if (rlForm.some(item => item === currentForm)) {
                 if (!isVendor) {
                   setUpdateSuccess(false);
                   setVendorUpdateSuccess(false);

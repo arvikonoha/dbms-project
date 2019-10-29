@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useStoreState, useStoreActions } from "easy-peasy";
+import React from "react";
 import "./fields.css";
 
 function Field({ name, label, type, placeholder, required }) {
-  let currentServiceId = useStoreState(state => state.profile.currentServiceId);
   return (
     <>
       <label for={name}>{label}</label>

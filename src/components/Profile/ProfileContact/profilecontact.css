@@ -68,7 +68,7 @@
 @media (max-width:900px) {
   #profile-main .profile-contact {
     grid-column: 1/6;
-    grid-row: 2/3;
-    transform: scale(.8);
+    grid-row: 3/6;
   }
+
 }

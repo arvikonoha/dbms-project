@@ -1,5 +1,5 @@
 import React from "react";
-import { useStoreState, action } from "easy-peasy";
+import { useStoreState } from "easy-peasy";
 import ProfileModifier from "../ProfileModifier/ProfileModifier";
 import "./profileheader.css";
 import HeaderForm from "./header-form";

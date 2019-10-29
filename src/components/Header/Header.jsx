@@ -7,7 +7,7 @@ function Header() {
     <header id="main-header">
       <div className="container">
         <h1 id="main-logo" className="pd-20">
-          Main logo
+          VendorNetwork
         </h1>
         <Navbar />
       </div>

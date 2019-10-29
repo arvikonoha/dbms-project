@@ -29,7 +29,6 @@
 
   #profile-main .profile-body {
     grid-column: 1/6;
-    grid-row: 3/6;
+    grid-row: 6/10;
   }
-
 }

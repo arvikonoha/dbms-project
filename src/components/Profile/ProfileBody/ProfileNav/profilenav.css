@@ -14,16 +14,37 @@
   font-size: 18px;
 }
 
-#profile-main .profile-body nav.profile-body-nav li a {
+#profile-main .profile-body nav.profile-body-nav li button {
+  cursor: pointer;
+  font-family: 'Lexend Deca', sans-serif;
   position: relative;
+  background-color: transparent;
+  border: none;
   font-size: 20px;
   color: #20202767;
   padding-right: 15px;
   transition: .2s all ease-in-out;
 }
 
-#profile-main .profile-body nav.profile-body-nav li a.current,
-#profile-main .profile-body nav.profile-body-nav li a:hover {
+#profile-main .profile-body nav.profile-body-nav li button.current,
+#profile-main .profile-body nav.profile-body-nav li button:hover {
+
   color: #202027d0;
   transition: .2s all ease-in-out;
+}
+
+@media (max-width:900px) {
+
+  #profile-main .profile-body nav.profile-body-nav li a {
+    font-size: 14px;
+    padding: 8px 4px;
+    line-height: 2em;
+  }
+
+  #profile-main .profile-body nav.profile-body-nav .update-btns {
+    transform: scale(.6);
+    top: 8px;
+    right: 5px;
+  }
+
 }

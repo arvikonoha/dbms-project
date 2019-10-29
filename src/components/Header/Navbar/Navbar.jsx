@@ -95,6 +95,7 @@ function Navbar() {
                     services: [],
                     description: "No description provided"
                   });
+                  window.location.href = "/";
                   setCurrentForm(RegisterForm);
                   localStorage.removeItem("userToken");
                   localStorage.removeItem("vendorToken");
@@ -142,6 +143,7 @@ function Navbar() {
                     token: "",
                     orders: []
                   });
+                  window.location.href = "/";
                   setLogin(false);
                   setCurrentForm(RegisterForm);
                   localStorage.removeItem("userToken");

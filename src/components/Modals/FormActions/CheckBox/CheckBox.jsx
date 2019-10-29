@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import RegisterUser from "./registerUser";
 import RegisterVendor from "./registerVendor";
-let requiresCheckbox = ["register-user", "login-user"];
 
 function CheckBox() {
   let isVendor = useStoreState(state => state.form.isVendor);

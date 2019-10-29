@@ -12,6 +12,7 @@ function Sidepane({ isVisible, toggleVisible }) {
   let setOrderVisible = useStoreActions(action => action.user.setOrderVisible);
   let isUserAuth = useStoreState(state => state.user.isAuth);
   let isVendorAuth = useStoreState(state => state.profile.isAuth);
+  let vid = useStoreState(state => state.profile.vid);
   let setProfileDetails = useStoreActions(
     action => action.profile.setProfileDetails
   );
@@ -69,7 +70,13 @@ function Sidepane({ isVisible, toggleVisible }) {
         ) : isVendorAuth ? (
           <>
             <li className="pd-8x pd-16y disp-bl">
-              <Link className="pd-8x pd-16y" to="profile/dashboard">
+              <Link
+                className="pd-8x pd-16y"
+                to={`profile/${vid}`}
+                onClick={e => {
+                  toggleVisible(false);
+                }}
+              >
                 Dashboard
               </Link>
             </li>
@@ -89,10 +96,13 @@ function Sidepane({ isVisible, toggleVisible }) {
                     vid: "",
                     token: "",
                     services: [],
+                    orders: [],
                     description: "No description provided"
                   });
                   setLogin(false);
                   setCurrentForm(RegisterForm);
+                  window.location.href = "/";
+                  toggleVisible(false);
                   localStorage.removeItem("userToken");
                   localStorage.removeItem("vendorToken");
                 }}
@@ -101,7 +111,19 @@ function Sidepane({ isVisible, toggleVisible }) {
               </Link>
             </li>
             <li className="pd-8x pd-16y disp-bl">
-              <Link className="pd-8x pd-16y">Delete Account</Link>
+              <Link
+                className="pd-8x pd-16y"
+                onClick={e => {
+                  e.preventDefault();
+                  console.log(e);
+                  toggleVisible(false);
+                  setCurrentForm(deleteAccount);
+                  setUserUpdateSuccess(false);
+                  setVendorUpdateSuccess(false);
+                }}
+              >
+                Delete Account
+              </Link>
             </li>
           </>
         ) : (
@@ -138,7 +160,9 @@ function Sidepane({ isVisible, toggleVisible }) {
                     token: "",
                     orders: []
                   });
+                  toggleVisible(false);
                   setCurrentForm(RegisterForm);
+                  window.location.href = "/";
                   localStorage.removeItem("userToken");
                   localStorage.removeItem("vendorToken");
                 }}
@@ -151,6 +175,8 @@ function Sidepane({ isVisible, toggleVisible }) {
                 className="pd-8x pd-16y"
                 onClick={e => {
                   e.preventDefault();
+                  console.log(e);
+                  toggleVisible(false);
                   setCurrentForm(deleteAccount);
                   setUserUpdateSuccess(false);
                   setVendorUpdateSuccess(false);

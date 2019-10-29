@@ -26,14 +26,14 @@ const query = {
   }),
   setAsyncCategories: thunk(async (action) => {
     try {
-      let categories = await axios.get(' https://frozen-brushlands-21504.herokuapp.com/categories')
-      console.log(categories.data)
+      let categories = await axios.get(' /categories')
+
       action.setCategories(categories.data)
       action.setLoading(false)
       action.setQuerySuccess(true)
 
     } catch (err) {
-      console.log(err)
+
       action.setErrors(err.response.data)
       action.setLoading(false)
       setTimeout(() => {
@@ -47,13 +47,13 @@ const query = {
   }),
   setAsyncVendors: thunk(async (action, payload) => {
     try {
-      let vendors = await axios.post(`https://frozen-brushlands-21504.herokuapp.com/fetchvendors/${payload.ishigh}`, payload)
-      console.log(vendors.data)
+      let vendors = await axios.post(`/fetchvendors/${payload.ishigh}`, payload)
+
       action.setVendors(vendors.data)
       action.setVendorLoading(false)
       action.setQuerySuccess(true)
     } catch (err) {
-      console.log(err)
+
       action.setVendors([])
       action.setErrors(err.response.data)
       action.setVendorLoading(false)

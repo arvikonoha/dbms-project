@@ -1,7 +1,6 @@
 .vendor-orders {
   color: #202027;
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .order-box {
@@ -9,7 +8,7 @@
   margin-bottom: 10px;
   padding: 20px;
   background-color: #ffffff88;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .order-box:last-child {
@@ -36,13 +35,13 @@
 .order-box .date-info {
   background-color: #ffffff88;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .order-box .order-services {
   background-color: #ffffff88;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .order-box .order-services ul {
