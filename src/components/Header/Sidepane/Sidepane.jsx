@@ -72,7 +72,7 @@ function Sidepane({ isVisible, toggleVisible }) {
             <li className="pd-8x pd-16y disp-bl">
               <Link
                 className="pd-8x pd-16y"
-                to={`profile/${vid}`}
+                to={`profileinfo/${vid}`}
                 onClick={e => {
                   toggleVisible(false);
                 }}

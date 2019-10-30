@@ -29,7 +29,7 @@ class App extends React.Component {
             <FormOuter />
             <Header />
             <Route exact path="/" component={Home} />
-            <Route path="/profile/:vid" component={ProfileHandler} />
+            <Route path="/profileinfo/:vid" component={ProfileHandler} />
             <Route path="/services" component={ServiceMain} />
             <Orders />
             <Cart />

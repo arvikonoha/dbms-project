@@ -34,7 +34,7 @@ function ServiceMain() {
         setVendorLoading(true);
       }
     }, 2000);
-  }, [querySuccess, setAsyncVendors, setVendorLoading, setVendorQuerySuccess]);
+  }, []);
 
   if (isVendorLoading)
     return (
@@ -69,7 +69,7 @@ function ServiceMain() {
                     {Number(item.avg).toFixed(2)}
                   </div>
                 </div>
-                <Link class="visit-profile-btn" to={`/profile/${item.vid}`}>
+                <Link class="visit-profile-btn" to={`/profileinfo/${item.vid}`}>
                   Visit profile
                 </Link>
               </div>
@@ -81,6 +81,7 @@ function ServiceMain() {
   else
     return (
       <>
+        <QuerySidepane isHidden={isHidden} setHidden={setHidden} />
         <button
           class={resolveClass()}
           onClick={e => {

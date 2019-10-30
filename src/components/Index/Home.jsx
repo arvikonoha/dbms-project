@@ -1,11 +1,12 @@
 import React from "react";
-import { useStoreActions } from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
 import CategoryCards from "./CategoryCards/CategoryCards";
 import { Link } from "react-router-dom";
 import "./home.css";
 
 function Home() {
   let setQuerySuccess = useStoreActions(action => action.query.setQuerySuccess);
+  let isAuth = useStoreState(state => state.profile.isAuth);
   let setVendorLoading = useStoreActions(
     action => action.query.setVendorLoading
   );
@@ -32,7 +33,7 @@ function Home() {
         </div>
         <div class="welcome-image"></div>
       </section>
-      <CategoryCards />
+      {!isAuth ? <CategoryCards /> : null}
     </>
   );
 }

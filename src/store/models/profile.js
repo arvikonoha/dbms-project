@@ -302,7 +302,7 @@ const profile = {
         body[i[0]] = i[1]
     try {
       let result = await axios.post(' /register/vendor', body)
-
+      result.data.services = []
       action.setProfileDetails(result.data)
       action.setUpdateSuccess(true)
       action.setAuth(true)

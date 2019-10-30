@@ -26,6 +26,7 @@ function Navbar() {
   );
   let [isSidepane, toggleSidepane] = useState(false);
   let isVendorAuth = useStoreState(state => state.profile.isAuth);
+  let vid = useStoreState(state => state.profile.vid);
   let isUserAuth = useStoreState(state => state.user.isAuth);
   let setQuerySuccess = useStoreActions(action => action.query.setQuerySuccess);
   let setVendorLoading = useStoreActions(
@@ -74,7 +75,7 @@ function Navbar() {
             <>
               <Link
                 className="normal pd-15 f-size-1 pos-rel cu-po"
-                to="/profile/dashboard"
+                to={`profileinfo/${vid}`}
               >
                 Dashboard
               </Link>
