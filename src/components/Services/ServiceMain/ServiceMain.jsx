@@ -9,6 +9,8 @@ function ServiceMain() {
   let isVendorLoading = useStoreState(state => state.query.isVendorLoading);
   let querySuccess = useStoreState(state => state.query.querySuccess);
   let vendors = useStoreState(state => state.query.vendors);
+  let pageCount = useStoreState(state => state.query.pageCount);
+  let [counter,setCounter] = useState(1);
   let setAsyncVendors = useStoreActions(action => action.query.setAsyncVendors);
   let setVendorQuerySuccess = useStoreActions(
     action => action.query.setQuerySuccess
@@ -45,7 +47,7 @@ function ServiceMain() {
   else if (querySuccess)
     return (
       <>
-        <QuerySidepane isHidden={isHidden} setHidden={setHidden} />
+        <QuerySidepane isHidden={isHidden} setCounter={setCounter} setHidden={setHidden} />
         <button
           class={resolveClass()}
           onClick={e => {
@@ -54,6 +56,44 @@ function ServiceMain() {
         >
           Sort & filter Options
         </button>
+        {
+          pageCount>1?<div class="page-number">
+          {
+            counter>1?<button class="page-prev-btn" onClick={
+              e=> {
+                console.log(counter)
+                setCounter(counter-1)
+                setAsyncVendors({
+                  ishigh: false,
+                  title: "",
+                  category: "",
+                  location: "",
+                  pageNumber: counter-2
+                });
+                setVendorQuerySuccess(false);
+                setVendorLoading(true);
+              }
+            }>Prev</button>:null
+          }
+          {
+            counter>1 && counter<pageCount?<> - </>:null
+          }
+          {counter<pageCount?<button class="page-next-btn"  onClick={
+              e=> {
+                setAsyncVendors({
+                  ishigh: false,
+                  title: "",
+                  category: "",
+                  location: "",
+                  pageNumber: counter
+                });
+                setCounter(counter+1)
+                setVendorQuerySuccess(false);
+                setVendorLoading(true);
+              }
+            }>Next</button>:null}
+        </div>:null
+        }
         <section id="services">
           <div class="service-cards ">
             <p>Prices mentioned are average service prices of each vendor</p>
@@ -81,7 +121,7 @@ function ServiceMain() {
   else
     return (
       <>
-        <QuerySidepane isHidden={isHidden} setHidden={setHidden} />
+        <QuerySidepane setCounter={setCounter} isHidden={isHidden} setHidden={setHidden} />
         <button
           class={resolveClass()}
           onClick={e => {
@@ -90,6 +130,40 @@ function ServiceMain() {
         >
           Sort & filter Options
         </button>
+        {
+          pageCount>1?<div class="page-number">
+          {
+            counter>1?<><button class="page-prev-btn" onClick={
+              e=> {
+                setAsyncVendors({
+                  ishigh: false,
+                  title: "",
+                  category: "",
+                  location: "",
+                  pageNumber: counter
+                });
+                setCounter(counter-1)
+                setVendorQuerySuccess(false);
+                setVendorLoading(true);
+              }
+            }>Prev</button> -</>:null
+          }
+          {counter<pageCount?<button class="page-next-btn"  onClick={
+              e=> {
+                setAsyncVendors({
+                  ishigh: false,
+                  title: "",
+                  category: "",
+                  location: "",
+                  pageNumber: counter
+                });
+                setCounter(counter+1)
+                setVendorQuerySuccess(false);
+                setVendorLoading(true);
+              }
+            }>Next</button>:null}
+        </div>:null
+        }
         <section id="services">
           <div class="service-cards ">
             <p className="error-line">

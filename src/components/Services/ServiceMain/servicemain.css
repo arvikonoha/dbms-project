@@ -34,6 +34,7 @@
     margin-left: 2%;
     margin-right: 2%;
   }
+
 }
 
 #services p:first-child {
@@ -143,4 +144,39 @@
     padding: 4px 8px;
     font-size: 12px;
   }
+}
+
+
+.page-next-btn,.page-prev-btn{
+  background-color: transparent;
+  font-size: 20px;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #202027b9;
+  cursor: pointer;
+  border: none;
+}
+
+.page-number {
+  position: fixed;
+  top: 80px;
+  right: 10%;
+  transition: .2s left ease-in-out;
+}
+
+@media (max-width:395px){
+  .page-number {
+    top: 110px;
+    left: 10%;
+  }
+}
+
+
+.page-number.hide {
+  right: -10%;
+  transition: .2s left ease-in-out;
+}
+
+
+.page-next-btn:hover,.page-prev-btn:hover {
+  color: #202027;
 }

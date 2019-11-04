@@ -11,3 +11,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.green-check,.gray-check{
+  margin-left:8px;
+}
+
+.green-check input,.gray-check input{
+  visibility: hidden;
+}
+
+.green-check{
+  color: #2dad53;
+}
+
+.gray-check{
+  color: #707070;
+}

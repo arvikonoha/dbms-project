@@ -9,7 +9,7 @@ function OrderService({ title, vendorId, vendorTitle }) {
       </li>
       <li>
         Provided by
-        <Link className="white-text" to={`profile/${vendorId}`}>
+        <Link className="white-text" to={`profileinfo/${vendorId}`}>
           {vendorTitle}
         </Link>
       </li>

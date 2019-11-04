@@ -6,6 +6,10 @@ import axios from 'axios'
 const query = {
   categories: [],
   querySuccess: false,
+  pageCount:0,
+  setPageCount: action((state,payload)=>{
+    state["pageCount"] = Math.ceil(payload / 5)
+  }),
   setQuerySuccess: action((state, payload) => {
     state["querySuccess"] = payload
   }),
@@ -26,7 +30,7 @@ const query = {
   }),
   setAsyncCategories: thunk(async (action) => {
     try {
-      let categories = await axios.get(' /categories')
+      let categories = await axios.get('  /categories')
 
       action.setCategories(categories.data)
       action.setLoading(false)
@@ -47,8 +51,11 @@ const query = {
   }),
   setAsyncVendors: thunk(async (action, payload) => {
     try {
-      let vendors = await axios.post(`/fetchvendors/${payload.ishigh}`, payload)
-
+      let vendors = await axios.post(` /fetchvendors/${payload.ishigh}`, payload)
+      console.log(vendors.data)
+      if(vendors.data.some(item => item.count))
+        action.setPageCount(vendors.data.pop().count)
+      
       action.setVendors(vendors.data)
       action.setVendorLoading(false)
       action.setQuerySuccess(true)

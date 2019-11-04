@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useStoreActions } from "easy-peasy";
 import "./querysidepane.css";
 
-function QuerySidepane({ isHidden, setHidden }) {
+function QuerySidepane({ isHidden, setHidden,setCounter }) {
   let [title, setTitle] = useState("");
   let [category, setCategory] = useState("");
   let [location, setLocation] = useState("");
@@ -31,6 +31,7 @@ function QuerySidepane({ isHidden, setHidden }) {
       <form
         onSubmit={e => {
           e.preventDefault();
+          setCounter(1);
           setAsyncVendors({ ishigh, title, category, location });
           setHidden(true);
           setQuerySuccess(false);

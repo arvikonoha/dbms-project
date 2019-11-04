@@ -20,9 +20,9 @@ function OrderItem({ title, order_from, order_to, services }) {
       </div>
       <h3>{title}</h3>
       <p>
-        from - {new Date(order_from).toDateString()}
+        from - {new Date(order_from + "").toDateString()}
         <br />
-        to - {new Date(order_to).toDateString()}
+        to - {new Date(order_to + "").toDateString()}
       </p>
       <div class={resolveServiceClass()}>
         <ul>
